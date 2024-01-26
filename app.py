@@ -9,10 +9,8 @@ import os
 
 app = Flask(__name__)
 
-# Set OpenAI API key
 os.environ["OPENAI_API_KEY"] = ""
 
-# Load documents and create QA system
 loader = PyPDFLoader("48lawsofpower.pdf")
 documents = loader.load()
 

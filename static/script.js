@@ -13,8 +13,6 @@ function appendMessage(message, isUser) {
     }
 
     chatContainer.appendChild(messageElement);
-
-    // Scroll to the bottom
     chatContainer.scrollTop = chatContainer.scrollHeight;
 }
 
@@ -25,8 +23,6 @@ chatInput.addEventListener('keypress', async function (e) {
         if (userQuery !== '') {
             appendMessage(`You: ${userQuery}`, true);
             chatInput.value = '';
-
-            // Send the user query to the server
             const response = await fetch('/ask', {
                 method: 'POST',
                 headers: {
